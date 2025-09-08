@@ -1,29 +1,27 @@
-# 🤖 AI-Powered Code Review Assistant
+# 🤖 AI-Powered Code Review Assistant (Gradio)
 
-An intelligent code analysis tool that combines traditional static analysis with cutting-edge AI to provide comprehensive code reviews, quality scoring, and actionable improvement suggestions.
+Deploy-ready version of the Colab project as a **Hugging Face Space**.
 
-## ✨ Features
+## 🚀 Quick Deploy (Hugging Face Spaces)
 
-- **🔍 Static Code Analysis**: Detects naming conventions, complexity issues, code smells, and best practice violations
-- **🤖 AI-Powered Insights**: Leverages Google's Gemini AI for intelligent code improvement suggestions  
-- **🔒 Security Scanning**: Identifies potential security vulnerabilities and risks
-- **📊 Quality Metrics**: Calculates maintainability index, cyclomatic complexity, and overall quality scores (0-10)
-- **🎯 Interactive Interface**: Beautiful Gradio web interface for real-time code analysis
-- **📈 Comprehensive Reporting**: Detailed analysis with prioritized recommendations
+1. Create a new Space → Type: **Gradio**.
+2. Add these files: `app.py`, `requirements.txt`, `README.md`.
+3. In your Space, go to **Settings → Variables and secrets** and add:
+   - Key: `GEMINI_API_KEY` — Value: your Google Gemini API key.
+4. The Space builds and gives you a public URL.
 
-## 🛠️ Tech Stack
+> If you don't set `GEMINI_API_KEY`, the app still works with **static analysis only**.
 
-- **Backend**: Python, Flask
-- **AI/ML**: Google Gemini AI, LangChain
-- **Analysis**: AST parsing, Radon complexity analysis
-- **Frontend**: Gradio for interactive web interface
-- **Tools**: GitHub integration ready, RESTful API design
+## 🖥️ Run Locally
 
-## 🚀 Quick Start
+```bash
+python -m venv .venv && source .venv/bin/activate   # Windows: .venv\Scripts\activate
+pip install -r requirements.txt
+export GEMINI_API_KEY=YOUR_KEY                       # Windows: set GEMINI_API_KEY=YOUR_KEY
+python app.py
+```
 
-### Google Colab (Recommended for Testing)
-```python
-# 1. Get your free Gemini API key: https://makersuite.google.com/app/apikey
-# 2. Open in Google Colab and run all cells
-# 3. Replace API key in the configuration section
-# 4. Launch the interactive interface!
+## 📁 Files
+- `app.py` — Gradio app
+- `requirements.txt` — Python dependencies
+- `README.md` — This guide
